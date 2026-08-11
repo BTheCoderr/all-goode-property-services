@@ -1,21 +1,18 @@
 # Asset Replacement Guide
 
-## Official logo (priority)
+## Official logo
 
-Temporary reference logo is already wired through one path:
-
-| Path | Notes |
-| --- | --- |
-| `public/brand/all-goode-logo.png` | **Drop the official high-res / vector export here** (same filename). Used by `BrandLogo` everywhere. |
-
-Optional companions:
+The owner-supplied logo is installed and used sitewide via `BrandLogo`.
 
 | Path | Notes |
 | --- | --- |
-| `public/brand/all-goode-logo-source.png` | Cleaned source crop from Instagram reference |
-| `public/brand/all-goode-logo-opaque.jpg` | Opaque black-backed version if needed |
+| `public/brand/all-goode-logo.png` | **Active logo** used by `BrandLogo` / header / footer / SEO |
+| `public/brand/all-goode-logo-official.png` | Same official file kept as a clear backup |
+| `public/brand/all-goode-logo-square.png` | Square padded version for icons |
+| `public/brand/all-goode-logo-opaque.jpg` | Opaque near-black backed version |
+| `public/brand/all-goode-logo-source.png` | Older Instagram crop (reference only) |
 
-No layout changes are required when replacing the logo — `BrandLogo` keeps fixed circular dimensions.
+To update later: overwrite `public/brand/all-goode-logo.png` with a higher-res or vector export using the same filename — no layout changes needed.
 
 Do **not** redraw or reinterpret the logo in code. Do not invent horizontal/icon/mono variants until the owner supplies them.
 

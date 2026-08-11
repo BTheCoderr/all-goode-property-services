@@ -28,8 +28,9 @@ export const business = {
   /** Update once the production domain is confirmed */
   websiteUrl: "https://allgoodepropertyservices.com",
   /**
-   * Temporary reference logo extracted from business Instagram.
-   * Replace this file with the official high-res/vector export — no layout changes needed.
+   * Official logo supplied by the business.
+   * Replace this file to update the logo sitewide — no layout changes needed.
+   * Backup copy: /brand/all-goode-logo-official.png
    */
   logoPath: "/brand/all-goode-logo.png",
 } as const;
