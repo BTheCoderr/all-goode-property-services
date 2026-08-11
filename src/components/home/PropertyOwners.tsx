@@ -7,9 +7,10 @@ export function PropertyOwners() {
   return (
     <section className="bg-[var(--color-cream)] py-16 sm:py-20">
       <Container>
-        <div className="rounded-2xl bg-[var(--color-ink)] px-6 py-10 text-[var(--color-cream)] sm:px-10 sm:py-12">
+        <div className="rounded-2xl bg-[var(--color-near-black)] px-6 py-10 text-[var(--color-cream)] sm:px-10 sm:py-12">
           <SectionHeading
             light
+            eyebrow="Property Owners"
             title="Got a Property That Needs Attention?"
             subtitle="From tenant cleanouts and junk removal to exterior cleanup and ongoing maintenance help, All Goode helps property owners get spaces cleaned up and ready for what's next."
           />

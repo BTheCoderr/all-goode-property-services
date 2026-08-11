@@ -11,8 +11,9 @@ export function QuoteSection() {
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <SectionHeading
+              eyebrow="Free Quote"
               title="Tell Us What You Need Gone, Cleaned Up or Handled."
-              subtitle="Send details and photos. Prefer to talk it through? Call or text anytime."
+              subtitle="Send details and photos. Prefer to talk it through? Call or text anytime. From messy to All Goode."
             />
             <div className="mt-6 space-y-3 text-sm text-[var(--color-muted)]">
               <p>

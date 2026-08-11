@@ -10,13 +10,13 @@ export function MobileStickyBar() {
       <div className="grid grid-cols-2 gap-2">
         <a
           href={telHref(business.phoneTel)}
-          className="inline-flex min-h-12 items-center justify-center rounded-md bg-[var(--color-ink)] text-sm font-semibold text-[var(--color-cream)]"
+          className="inline-flex min-h-12 items-center justify-center rounded-md bg-[var(--color-charcoal)] text-sm font-semibold uppercase tracking-[0.06em] text-[var(--color-cream)]"
         >
           Call
         </a>
         <Link
           href="/contact"
-          className="inline-flex min-h-12 items-center justify-center rounded-md bg-[var(--color-green)] text-sm font-semibold text-white"
+          className="inline-flex min-h-12 items-center justify-center rounded-md bg-[var(--color-green)] text-sm font-semibold uppercase tracking-[0.06em] text-white"
         >
           Get Quote
         </Link>

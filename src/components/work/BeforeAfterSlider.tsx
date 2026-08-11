@@ -68,10 +68,10 @@ export function BeforeAfterSlider({ project, className }: Props) {
           </div>
         </div>
 
-        <span className="absolute top-3 left-3 rounded bg-black/70 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
+        <span className="absolute top-3 left-3 rounded bg-black/70 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white/90">
           Before
         </span>
-        <span className="absolute top-3 right-3 rounded bg-[var(--color-green)] px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
+        <span className="absolute top-3 right-3 rounded bg-[var(--color-green)] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white">
           After
         </span>
 
@@ -90,8 +90,10 @@ export function BeforeAfterSlider({ project, className }: Props) {
       </div>
 
       <figcaption className="space-y-2 bg-[var(--color-surface)] p-5">
-        <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-green)]">
-          <span>{project.service}</span>
+        <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em]">
+          <span className="rounded-md bg-[var(--color-green)] px-2.5 py-1 text-white">
+            {project.service}
+          </span>
           {project.location ? (
             <>
               <span className="text-[var(--color-muted)]">•</span>

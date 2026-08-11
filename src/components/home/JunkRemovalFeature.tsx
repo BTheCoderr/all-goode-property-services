@@ -1,4 +1,4 @@
-import { business } from "@/data/business";
+import { brandPhrases, business } from "@/data/business";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { JobImage } from "@/components/ui/JobImage";
@@ -13,15 +13,24 @@ const steps = [
 
 export function JunkRemovalFeature() {
   return (
-    <section className="bg-[var(--color-ink)] py-16 text-[var(--color-cream)] sm:py-24" id="junk-removal">
+    <section
+      className="bg-[var(--color-near-black)] py-16 text-[var(--color-cream)] sm:py-24"
+      id="junk-removal"
+    >
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-[var(--color-accent-junk)]">
+              Junk Removal
+            </p>
             <SectionHeading
               light
               title="Need It Gone?"
               subtitle="Old furniture. Appliances. Yard debris. Moving leftovers. Property cleanouts. If it's taking up space and you need it out of the way, send All Goode a photo and get a quote."
             />
+            <p className="mt-3 font-display-caps text-lg tracking-[0.06em] text-[var(--color-green-soft)]">
+              {brandPhrases.needItGone}
+            </p>
             <ol className="mt-8 space-y-4">
               {steps.map((step) => (
                 <li key={step.n} className="flex gap-4">
@@ -36,7 +45,11 @@ export function JunkRemovalFeature() {
               ))}
             </ol>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="/contact?service=Junk%20Removal" variant="primary">
+              <ButtonLink
+                href="/contact?service=Junk%20Removal"
+                variant="primary"
+                className="uppercase tracking-[0.06em]"
+              >
                 Send Photos for a Quote
               </ButtonLink>
               <a
@@ -44,7 +57,7 @@ export function JunkRemovalFeature() {
                   business.phoneSms,
                   "Hi All Goode — I need junk removed. Photos coming next.",
                 )}
-                className="inline-flex min-h-12 items-center justify-center rounded-md border border-white/25 px-5 text-sm font-semibold text-white transition hover:bg-white/10"
+                className="inline-flex min-h-12 items-center justify-center rounded-md border border-white/30 px-5 text-sm font-semibold uppercase tracking-[0.06em] text-white transition hover:bg-white/10"
               >
                 Text Photos
               </a>

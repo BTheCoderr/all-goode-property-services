@@ -31,7 +31,7 @@ export function createMetadata({
       siteName: business.name,
       locale: "en_US",
       type: "website",
-      images: [{ url: "/brand/logo.svg", alt: business.name }],
+      images: [{ url: business.logoPath, alt: business.name }],
     },
     twitter: {
       card: "summary_large_image",

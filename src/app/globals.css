@@ -1,13 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --color-ink: #121212;
-  --color-cream: #f4f4ef;
-  --color-surface: #ecece6;
-  --color-muted: #5c5c56;
-  --color-green: #3e8b3a;
-  --color-green-dark: #2f6d2c;
-  --color-green-soft: #7dbf78;
+  /* Logo-derived brand system — 70% neutrals / 25% greens / 5% accents */
+  --color-near-black: #070807;
+  --color-ink: #070807;
+  --color-charcoal: #20231f;
+  --color-cream: #f5f6f2;
+  --color-surface: #eceee8;
+  --color-white: #ffffff;
+  --color-muted: #5a5e57;
+  --color-green: #2f7d32;
+  --color-green-dark: #14521e;
+  --color-green-soft: #5f963f;
+  --color-accent-junk: #b86a2f;
+  --color-accent-snow: #7eb6c9;
   --background: var(--color-cream);
   --foreground: var(--color-ink);
 }
@@ -31,12 +37,29 @@ body {
 
 .font-display {
   font-family: var(--font-display), var(--font-body), system-ui, sans-serif;
-  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
+.font-display-caps {
+  font-family: var(--font-display), var(--font-body), system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 ::selection {
   background: color-mix(in oklab, var(--color-green) 35%, white);
   color: var(--color-ink);
+}
+
+/* Subtle land / property silhouette divider inspired by logo motifs */
+.brand-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--color-green) 55%, transparent),
+    transparent
+  );
 }
 
 @media (prefers-reduced-motion: reduce) {

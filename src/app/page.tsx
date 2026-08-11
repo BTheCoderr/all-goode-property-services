@@ -1,5 +1,6 @@
 import { AboutTeaser } from "@/components/home/AboutTeaser";
 import { BeforeAfterSection } from "@/components/home/BeforeAfterSection";
+import { FinalCta } from "@/components/home/FinalCta";
 import { Hero } from "@/components/home/Hero";
 import { InstagramGrid } from "@/components/home/InstagramGrid";
 import { JunkRemovalFeature } from "@/components/home/JunkRemovalFeature";
@@ -24,6 +25,7 @@ export default function HomePage() {
       <ServiceArea />
       <InstagramGrid />
       <QuoteSection />
+      <FinalCta />
     </>
   );
 }
