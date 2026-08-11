@@ -43,3 +43,6 @@ next-env.d.ts
 # quote form submissions (may contain customer PII / photos)
 /data/quote-submissions/**
 !/data/quote-submissions/.gitkeep
+
+# Local Netlify folder
+.netlify
