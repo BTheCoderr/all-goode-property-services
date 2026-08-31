@@ -10,11 +10,10 @@ export function Hero() {
       <div className="absolute inset-0">
         <JobImage
           src="/jobs/hero-junk-removal.webp"
-          alt="All Goode Property Services job site — replace with a strong real project photo"
-          className="h-full w-full opacity-40"
+          alt="All Goode Property Services work truck on a residential job site"
+          className="h-full w-full opacity-45"
           priority
           sizes="100vw"
-          needsRealPhotos
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-near-black)] via-[var(--color-near-black)]/90 to-[var(--color-near-black)]/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-near-black)] via-transparent to-[var(--color-near-black)]/40" />

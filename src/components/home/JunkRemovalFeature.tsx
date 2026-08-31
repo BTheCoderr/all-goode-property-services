@@ -65,10 +65,9 @@ export function JunkRemovalFeature() {
           </div>
           <JobImage
             src="/jobs/junk-removal-01.webp"
-            alt="Junk removal haul placeholder — replace with All Goode loaded trailer photo"
+            alt="Overgrown property lot needing junk removal and cleanout"
             className="aspect-[4/5] rounded-xl sm:aspect-[5/4]"
             sizes="(max-width: 1024px) 100vw, 50vw"
-            needsRealPhotos
           />
         </div>
       </Container>

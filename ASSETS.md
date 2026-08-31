@@ -18,25 +18,15 @@ Do **not** redraw or reinterpret the logo in code. Do not invent horizontal/icon
 
 ## Job / project photos
 
+Real All Goode job photos are installed under `public/jobs/` and `public/instagram/`.
+
+Still needed from the owner when available:
+
 | Path | Use |
 | --- | --- |
-| `public/jobs/hero-junk-removal.webp` | Homepage hero |
-| `public/jobs/junk-removal-01.webp` | Junk removal feature / cards |
-| `public/jobs/junk-removal-02.webp` | Junk gallery pair |
-| `public/jobs/property-cleanout-01.webp` | Cleanouts |
-| `public/jobs/yard-cleanup-before.webp` | Before/after #1 before |
-| `public/jobs/yard-cleanup-after.webp` | Before/after #1 after |
-| `public/jobs/yard-cleanup-02-before.webp` | Before/after #2 before |
-| `public/jobs/yard-cleanup-02-after.webp` | Before/after #2 after |
-| `public/jobs/landscaping-01.webp` | Landscaping |
-| `public/jobs/brush-debris-01.webp` | Brush & debris |
-| `public/jobs/property-maintenance-01.webp` | Maintenance |
-| `public/jobs/snow-removal-01.webp` | Snow |
-| `public/jobs/hauling-01.webp` | Hauling |
 | `public/about/owner.webp` | Approved owner/team photo |
-| `public/instagram/post-01.webp` … `post-06.webp` | Curated IG grid |
 
-Current job images are **branded placeholders**, not stock photography. Replace with real All Goode work photos.
+To add more before/after projects, drop images into `/public/jobs` and add an entry in `src/data/projects.ts`.
 
 ## Add a new before/after project
 

@@ -52,7 +52,6 @@ export function ServicePage({ service }: { service: Service }) {
             className="aspect-[5/4] rounded-xl"
             priority
             sizes="(max-width: 1024px) 100vw, 50vw"
-            needsRealPhotos
           />
         </Container>
       </section>

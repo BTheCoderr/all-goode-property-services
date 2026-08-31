@@ -31,7 +31,6 @@ export default function ServicesPage() {
                 src={service.image}
                 alt={service.imageAlt}
                 className="aspect-[16/9]"
-                needsRealPhotos
               />
               <div className="p-6">
                 <h2 className="font-display text-3xl tracking-tight">{service.name}</h2>

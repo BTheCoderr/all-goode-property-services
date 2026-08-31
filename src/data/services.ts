@@ -32,7 +32,7 @@ export const services: Service[] = [
     pageDescription:
       "Old furniture, appliances, yard debris, moving leftovers — if it's taking up space and you need it gone, All Goode can haul it away. Send photos for a straightforward quote.",
     image: "/jobs/junk-removal-01.webp",
-    imageAlt: "Junk removal job placeholder — replace with All Goode loaded trailer photo",
+    imageAlt: "Overgrown property lot with debris — All Goode junk and cleanout work",
     href: "/services/junk-removal",
     featured: true,
     formValue: "Junk Removal",
@@ -50,7 +50,7 @@ export const services: Service[] = [
     pageDescription:
       "Whether you're moving, turning over a rental, or clearing a property for the next chapter, All Goode handles cleanouts so you don't have to.",
     image: "/jobs/property-cleanout-01.webp",
-    imageAlt: "Property cleanout placeholder — replace with real All Goode cleanout photo",
+    imageAlt: "Cluttered patio with tarp and debris before property cleanout",
     href: "/services/property-cleanouts",
     featured: true,
     formValue: "Property Cleanout",
@@ -65,7 +65,7 @@ export const services: Service[] = [
     pageDescription:
       "Overgrown yards, leaf piles, brush and outdoor clutter — we clean it up so the property looks cared for again.",
     image: "/jobs/yard-cleanup-after.webp",
-    imageAlt: "Yard cleanup placeholder — replace with All Goode before/after yard work",
+    imageAlt: "Cleared brick patio and fire pit after All Goode yard cleanup",
     href: "/services/yard-cleanup",
     featured: true,
     formValue: "Yard Cleanup",
@@ -80,7 +80,7 @@ export const services: Service[] = [
     pageDescription:
       "Practical landscaping and exterior work for homeowners and property owners who want the outside looking maintained — without the runaround.",
     image: "/jobs/landscaping-01.webp",
-    imageAlt: "Landscaping work placeholder — replace with All Goode landscaping photo",
+    imageAlt: "Finished outdoor patio seating area after landscaping cleanup",
     href: "/services/landscaping",
     featured: true,
     formValue: "Landscaping",
@@ -95,7 +95,7 @@ export const services: Service[] = [
     pageDescription:
       "Storm debris, cut branches, brush piles and yard waste — loaded up and hauled so your property is clear again.",
     image: "/jobs/brush-debris-01.webp",
-    imageAlt: "Brush and debris removal placeholder — replace with real job photo",
+    imageAlt: "Overgrown brush growing through chain-link fence before removal",
     href: "/services/brush-debris",
     featured: true,
     formValue: "Brush/Debris Removal",
@@ -110,7 +110,7 @@ export const services: Service[] = [
     pageDescription:
       "General property maintenance help for homes and investment properties — the jobs that keep a place clean, functional and looking looked-after.",
     image: "/jobs/property-maintenance-01.webp",
-    imageAlt: "Property maintenance placeholder — replace with All Goode maintenance photo",
+    imageAlt: "Property maintenance tools staged on a residential patio job",
     href: "/services/property-maintenance",
     featured: true,
     formValue: "Property Maintenance",
@@ -124,7 +124,7 @@ export const services: Service[] = [
     pageDescription:
       "Seasonal snow clearing for driveways, walks and property access when Rhode Island winter shows up.",
     image: "/jobs/snow-removal-01.webp",
-    imageAlt: "Snow removal placeholder — replace with All Goode snow clearing photo",
+    imageAlt: "Residential driveway cleared after All Goode snow removal",
     href: "/services/snow-removal",
     featured: true,
     formValue: "Snow Removal",
@@ -139,7 +139,7 @@ export const services: Service[] = [
     pageDescription:
       "Hauling support for property cleanups, junk loads and debris — get it loaded and gone.",
     image: "/jobs/hauling-01.webp",
-    imageAlt: "Hauling placeholder — replace with All Goode truck or trailer photo",
+    imageAlt: "All Goode Property Services work truck on a residential job site",
     href: "/contact?service=Other",
     featured: false,
     formValue: "Other",

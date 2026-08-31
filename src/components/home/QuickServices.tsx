@@ -26,7 +26,6 @@ export function QuickServices() {
                   alt={service.imageAlt}
                   className="aspect-[16/10]"
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  needsRealPhotos
                 />
                 <span
                   className={`absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-white ${

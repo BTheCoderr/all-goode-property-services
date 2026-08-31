@@ -44,10 +44,6 @@ export function InstagramGrid() {
             </a>
           ))}
         </div>
-        <p className="mt-4 text-xs text-[var(--color-muted)]">
-          Grid slots are ready for curated business Instagram stills — drop files into{" "}
-          <code>/public/instagram</code>.
-        </p>
       </Container>
     </section>
   );
