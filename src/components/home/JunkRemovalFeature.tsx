@@ -11,6 +11,36 @@ const steps = [
   { n: "3", title: "We Haul It Away", body: "We show up, load it up, and get it gone." },
 ];
 
+const junkJobs = [
+  { name: "Front Yard Cleanout", image: "front-yard", before: "Discarded furniture and bagged junk filling a front yard", after: "Front yard after furniture and bagged junk were removed" },
+  { name: "Fence-Line Junk Removal", image: "fence", before: "Discarded outdoor equipment and debris piled against a fence", after: "Fence line after the piled equipment and debris were removed" },
+  { name: "Mattress & Carpet Pickup", image: "curb", before: "Mattresses and carpet waiting for pickup beside the sidewalk", after: "Sidewalk after mattress and carpet pickup" },
+  { name: "Patio Cleanout", image: "patio", before: "Toys, furniture and household items piled on a patio", after: "Patio with space opened up after junk removal" },
+];
+
+function JunkJobPhotos({ job }: { job: (typeof junkJobs)[number] }) {
+  return (
+    <figure>
+      <div className="grid grid-cols-2 gap-3">
+        {(["before", "after"] as const).map((stage) => (
+          <div key={stage} className="relative">
+            <JobImage
+              src={`/jobs/junk-${job.image}-${stage}.jpeg`}
+              alt={job[stage]}
+              className="aspect-[9/16] rounded-xl"
+              sizes="(max-width: 1024px) 50vw, 25vw"
+            />
+            <span className="absolute left-2 top-2 rounded bg-black/80 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
+              {stage}
+            </span>
+          </div>
+        ))}
+      </div>
+      <figcaption className="mt-3 font-semibold text-white">{job.name}</figcaption>
+    </figure>
+  );
+}
+
 export function JunkRemovalFeature() {
   return (
     <section
@@ -63,13 +93,16 @@ export function JunkRemovalFeature() {
               </a>
             </div>
           </div>
-          <JobImage
-            src="/jobs/junk-removal-01.webp"
-            alt="Overgrown property lot needing junk removal and cleanout"
-            className="aspect-[4/5] rounded-xl sm:aspect-[5/4]"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
+          <JunkJobPhotos job={junkJobs[0]} />
         </div>
+        <details className="mt-8">
+          <summary className="cursor-pointer rounded-md border border-white/30 p-4 font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-4">
+            More junk removal before &amp; after photos
+          </summary>
+          <div className="mt-6 grid gap-8 lg:grid-cols-3">
+            {junkJobs.slice(1).map((job) => <JunkJobPhotos key={job.image} job={job} />)}
+          </div>
+        </details>
       </Container>
     </section>
   );
