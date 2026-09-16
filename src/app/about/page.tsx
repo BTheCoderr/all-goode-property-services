@@ -20,11 +20,10 @@ export default function AboutPage() {
       <Container>
         <div className="grid items-start gap-10 lg:grid-cols-2">
           <JobImage
-            src="/about/owner.webp"
-            alt="All Goode Property Services owner — replace with approved owner photo"
+            src="/jobs/junk-front-yard-after.jpeg"
+            alt="Front yard after All Goode removed furniture, bags and household junk"
             className="aspect-[4/5] rounded-xl"
             priority
-            needsRealPhotos
           />
           <div>
             <SectionHeading title="Local Business. Real Work. No Runaround." />

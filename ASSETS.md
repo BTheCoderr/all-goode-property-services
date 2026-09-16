@@ -20,17 +20,15 @@ Do **not** redraw or reinterpret the logo in code. Do not invent horizontal/icon
 
 Real All Goode job photos are installed under `public/jobs/` and `public/instagram/`.
 
-Still needed from the owner when available:
-
-| Path | Use |
-| --- | --- |
-| `public/about/owner.webp` | Approved owner/team photo |
+The About sections use completed job photos. No owner portrait is displayed.
+The `junk-*-before.jpeg` and `junk-*-after.jpeg` files are owner-supplied pairs
+for front yard, fence line, curbside and patio junk removal.
 
 To add more before/after projects, drop images into `/public/jobs` and add an entry in `src/data/projects.ts`.
 
 ## Add a new before/after project
 
-Edit `src/data/projects.ts` and set `needsRealPhotos: false` once real photos are in place.
+Edit `src/data/projects.ts` using real before and after photos from the same job.
 
 ## Business config
 

@@ -114,13 +114,6 @@ export function BeforeAfterSlider({ project, className }: Props) {
             {project.afterCaption}
           </p>
         </div>
-        {project.needsRealPhotos ? (
-          <p className="text-xs text-[var(--color-muted)]">
-            Photo slots ready — replace files in{" "}
-            <code className="text-[var(--color-ink)]">/public/jobs</code> with real All Goode job
-            photos.
-          </p>
-        ) : null}
       </figcaption>
     </figure>
   );

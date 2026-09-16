@@ -12,8 +12,6 @@ export type Project = {
   afterCaption: string;
   date?: string;
   featured: boolean;
-  /** true until real All Goode job photos replace placeholders */
-  needsRealPhotos: boolean;
 };
 
 /**
@@ -34,7 +32,6 @@ export const projects: Project[] = [
     beforeCaption: "Weeds taking over the fire pit, furniture and lawn.",
     afterCaption: "Cleared, cleaned and ready to sit outside again.",
     featured: true,
-    needsRealPhotos: false,
   },
   {
     title: "Side Yard Cleanout",
@@ -49,7 +46,6 @@ export const projects: Project[] = [
     beforeCaption: "Overgrowth, vines and piled debris blocking the walkway.",
     afterCaption: "Path cleared and the area back under control.",
     featured: true,
-    needsRealPhotos: false,
   },
   {
     title: "Driveway Snow Clearing",
@@ -64,7 +60,6 @@ export const projects: Project[] = [
     beforeCaption: "Deep snow covering the full length of the driveway.",
     afterCaption: "Cleared path to the house — access restored.",
     featured: true,
-    needsRealPhotos: false,
   },
   {
     title: "Residential Snow Plow",
@@ -79,22 +74,20 @@ export const projects: Project[] = [
     beforeCaption: "Fresh snow blocking driveway access from the street.",
     afterCaption: "Plowed open with banks pushed back for clear access.",
     featured: true,
-    needsRealPhotos: false,
   },
   {
-    title: "Overgrown Lot Cleanup",
-    slug: "overgrown-lot-cleanup",
-    service: "Yard Cleanup",
+    title: "Patio Junk Removal",
+    slug: "patio-junk-removal",
+    service: "Junk Removal",
     location: "Rhode Island",
-    description: "Waist-high weeds and neglected lot brought back under control.",
-    beforeImage: "/jobs/overgrown-lot-01.webp",
-    afterImage: "/jobs/fence-brush-01.webp",
-    beforeAlt: "Before: heavily overgrown lot with tall weeds around parked truck",
-    afterAlt: "After: brush and vines cleared along fence line",
-    beforeCaption: "Tall weeds swallowing the lot and driveway edge.",
-    afterCaption: "Brush cut back and the fence line opened up.",
+    description: "Unwanted toys and bulky items removed from a backyard patio.",
+    beforeImage: "/jobs/junk-patio-before.jpeg",
+    afterImage: "/jobs/junk-patio-after.jpeg",
+    beforeAlt: "Before: unwanted toys and bulky items piled on a backyard patio",
+    afterAlt: "After: patio cleared of the unwanted items",
+    beforeCaption: "Unwanted toys and bulky items taking up patio space.",
+    afterCaption: "Junk removed and the patio opened up again.",
     featured: false,
-    needsRealPhotos: false,
   },
 ];
 

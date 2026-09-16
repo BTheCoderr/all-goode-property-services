@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 type BrandLogoProps = {
   className?: string;
-  /** Visual size hint — layout stays stable when hi-res logo replaces the temp asset */
+  /** Visual size hint for the official logo. */
   size?: "sm" | "md" | "lg" | "hero";
   priority?: boolean;
 };

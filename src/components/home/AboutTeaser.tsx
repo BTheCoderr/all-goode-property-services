@@ -9,11 +9,10 @@ export function AboutTeaser() {
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <JobImage
-            src="/about/owner.webp"
-            alt="All Goode Property Services owner — replace with approved owner photo"
+            src="/jobs/junk-patio-after.jpeg"
+            alt="Patio cleared of unwanted items after an All Goode junk removal job"
             className="aspect-[4/5] rounded-xl"
             sizes="(max-width: 1024px) 100vw, 50vw"
-            needsRealPhotos
           />
           <div>
             <SectionHeading title="Local Business. Real Work. No Runaround." />

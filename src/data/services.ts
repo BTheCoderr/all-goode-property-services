@@ -31,8 +31,8 @@ export const services: Service[] = [
       "Furniture, appliances, household junk, unwanted items and debris removed without the headache.",
     pageDescription:
       "Old furniture, appliances, yard debris, moving leftovers — if it's taking up space and you need it gone, All Goode can haul it away. Send photos for a straightforward quote.",
-    image: "/jobs/junk-removal-01.webp",
-    imageAlt: "Overgrown property lot with debris — All Goode junk and cleanout work",
+    image: "/jobs/junk-front-yard-before.jpeg",
+    imageAlt: "Furniture, bags and household junk ready for removal from a front yard",
     href: "/services/junk-removal",
     featured: true,
     formValue: "Junk Removal",

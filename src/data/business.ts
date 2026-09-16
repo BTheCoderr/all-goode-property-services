@@ -25,8 +25,7 @@ export const business = {
   },
   hoursNote: "Call or text for availability",
   reviewUrl: "", // Add Google Business / review link when available
-  /** Update once the production domain is confirmed */
-  websiteUrl: "https://allgoodepropertyservices.com",
+  websiteUrl: "https://all-goode-property-services.netlify.app",
   /**
    * Official logo supplied by the business.
    * Replace this file to update the logo sitewide — no layout changes needed.
