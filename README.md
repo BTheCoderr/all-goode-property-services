@@ -1,5 +1,11 @@
 # All Goode Property Services
 
+<!-- repo-intro:start -->
+**Project snapshot:** All Goode Property Services is a production website for junk removal, cleanouts, yard work, landscaping, and property services with structured content and a protected quote workflow.
+
+**What it demonstrates:** Next.js · TypeScript · Tailwind CSS · rate-limited forms · local content architecture · Resend-ready email.
+<!-- repo-intro:end -->
+
 Production website for All Goode Property Services — Providence, RI junk removal, cleanouts, yard work, landscaping and property services.
 
 ## Stack
