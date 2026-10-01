@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BrandLogo } from "@/components/brand/BrandLogo";
 import { business, navLinks } from "@/data/business";
 import { ButtonLink } from "@/components/ui/Button";
@@ -9,6 +9,17 @@ import { telHref } from "@/lib/utils";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setOpen(false);
+      }
+    }
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 border-b border-black/8 bg-[var(--color-cream)]/95 backdrop-blur-md">
@@ -49,9 +60,11 @@ export function Header() {
           >
             Call Now
           </a>
-          <ButtonLink href="/contact" className="hidden uppercase tracking-[0.06em] md:inline-flex" variant="primary">
-            Get a Quote
-          </ButtonLink>
+          <div className="hidden md:block">
+            <ButtonLink href="/contact" className="uppercase tracking-[0.06em]" variant="primary">
+              Get a Quote
+            </ButtonLink>
+          </div>
           <button
             type="button"
             className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-black/10 lg:hidden"
