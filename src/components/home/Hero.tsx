@@ -11,12 +11,13 @@ export function Hero() {
         <JobImage
           src="/jobs/hero-junk-removal.webp"
           alt="All Goode Property Services work truck on a residential job site"
-          className="h-full w-full opacity-45"
+          className="h-full w-full opacity-65"
+          imageClassName="object-[66%_center]"
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-near-black)] via-[var(--color-near-black)]/90 to-[var(--color-near-black)]/50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-near-black)] via-transparent to-[var(--color-near-black)]/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-near-black)]/95 via-[var(--color-near-black)]/72 to-[var(--color-near-black)]/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-near-black)]/90 via-transparent to-[var(--color-near-black)]/20" />
       </div>
 
       <Container className="relative flex min-h-[90vh] flex-col justify-end pb-14 pt-24 sm:min-h-[84vh] sm:justify-center sm:pb-24 sm:pt-28">
@@ -27,7 +28,7 @@ export function Hero() {
           Property Problems?
           <span className="mt-2 block text-[var(--color-green-soft)]">It&apos;s All Goode.</span>
         </h1>
-        <p className="mt-5 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">
+        <p className="mt-5 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">
           Junk removal, cleanouts, yard work, landscaping and dependable property services from a
           local crew that shows up and gets the job handled.
         </p>
@@ -42,7 +43,7 @@ export function Hero() {
             Call {business.phoneDisplay}
           </a>
         </div>
-        <ul className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/70 sm:text-xs">
+        <ul className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/75 sm:text-xs">
           {trustStrip.map((item, index) => (
             <li key={item} className="flex items-center gap-3">
               {index > 0 ? <span className="text-[var(--color-green)]" aria-hidden>•</span> : null}
@@ -50,7 +51,7 @@ export function Hero() {
             </li>
           ))}
         </ul>
-        <p className="mt-3 text-sm text-white/50">{business.serviceAreaLabel}.</p>
+        <p className="mt-3 text-sm text-white/60">{business.serviceAreaLabel}.</p>
       </Container>
     </section>
   );
