@@ -95,8 +95,9 @@ export async function POST(request: Request) {
 
     const apiKey = process.env.RESEND_API_KEY;
     const toEmail = process.env.QUOTE_TO_EMAIL;
+    const fromEmail = process.env.QUOTE_FROM_EMAIL;
 
-    if (!apiKey || !toEmail) {
+    if (!apiKey || !toEmail || !fromEmail) {
       return NextResponse.json(
         {
           ok: false,
@@ -113,7 +114,7 @@ export async function POST(request: Request) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: process.env.QUOTE_FROM_EMAIL || "All Goode Website <onboarding@resend.dev>",
+        from: fromEmail,
         to: [toEmail],
         ...(email ? { reply_to: email } : {}),
         subject: `New quote request: ${service} — ${name}`,
@@ -131,6 +132,7 @@ export async function POST(request: Request) {
     });
 
     if (!emailResponse.ok) {
+      console.error("Quote email delivery failed", { status: emailResponse.status });
       return NextResponse.json(
         {
           ok: false,
