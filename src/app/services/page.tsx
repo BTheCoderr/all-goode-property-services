@@ -18,6 +18,7 @@ export default function ServicesPage() {
     <section className="bg-[var(--color-cream)] py-16 sm:py-20">
       <Container>
         <SectionHeading
+          as="h1"
           title="Services That Get Properties Handled"
           subtitle="One local team for the dirty, difficult and time-consuming jobs."
         />
@@ -37,13 +38,16 @@ export default function ServicesPage() {
                 <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)]">
                   {service.cardDescription}
                 </p>
-                <div className="mt-4 flex flex-wrap gap-4 text-sm font-semibold">
-                  <Link href={service.href} className="text-[var(--color-ink)] underline-offset-4 hover:underline">
+                <div className="mt-4 flex flex-wrap gap-2 text-sm font-semibold">
+                  <Link
+                    href={service.href}
+                    className="inline-flex min-h-11 items-center px-1 text-[var(--color-ink)] underline-offset-4 hover:underline"
+                  >
                     Learn more
                   </Link>
                   <Link
                     href={`/contact?service=${encodeURIComponent(service.formValue)}`}
-                    className="text-[var(--color-green)] underline-offset-4 hover:underline"
+                    className="inline-flex min-h-11 items-center px-1 text-[var(--color-green)] underline-offset-4 hover:underline"
                   >
                     Get a Quote
                   </Link>
