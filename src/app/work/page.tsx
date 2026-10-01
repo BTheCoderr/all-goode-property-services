@@ -18,6 +18,7 @@ export default function WorkPage() {
     <section className="bg-[var(--color-cream)] py-16 sm:py-20">
       <Container>
         <SectionHeading
+          as="h1"
           title="The Difference Speaks for Itself."
           subtitle="Real properties. Real work. Real results."
         />
