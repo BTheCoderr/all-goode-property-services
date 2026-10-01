@@ -26,7 +26,7 @@ export default function AboutPage() {
             priority
           />
           <div>
-            <SectionHeading title="Local Business. Real Work. No Runaround." />
+            <SectionHeading as="h1" title="Local Business. Real Work. No Runaround." />
             <div className="mt-5 space-y-4 text-base leading-relaxed text-[var(--color-muted)]">
               <p>
                 All Goode Property Services was built around a simple idea: when someone trusts you
