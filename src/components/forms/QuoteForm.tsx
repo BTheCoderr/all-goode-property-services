@@ -1,9 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { business } from "@/data/business";
 import { quoteServiceOptions, timeframeOptions } from "@/data/services";
 import { Button } from "@/components/ui/Button";
-import { cn } from "@/lib/utils";
+import { cn, smsHref } from "@/lib/utils";
 
 type FormState = {
   name: string;
@@ -46,7 +47,6 @@ export function QuoteForm({ defaultService, className }: Props) {
   );
 
   const [form, setForm] = useState<FormState>(starting);
-  const [files, setFiles] = useState<File[]>([]);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [serverMessage, setServerMessage] = useState("");
@@ -68,17 +68,6 @@ export function QuoteForm({ defaultService, className }: Props) {
     if (!form.details.trim() || form.details.trim().length < 10) {
       next.details = "Tell us a bit about the job (at least a sentence).";
     }
-    if (files.length > 12) next.files = "Please upload 12 photos or fewer.";
-    for (const file of files) {
-      if (file.size > 8 * 1024 * 1024) {
-        next.files = "Each photo must be under 8MB.";
-        break;
-      }
-      if (!file.type.startsWith("image/")) {
-        next.files = "Only image files are accepted.";
-        break;
-      }
-    }
     setErrors(next);
     return Object.keys(next).length === 0;
   }
@@ -92,20 +81,33 @@ export function QuoteForm({ defaultService, className }: Props) {
 
     const body = new FormData();
     Object.entries(form).forEach(([key, value]) => body.append(key, value));
-    files.forEach((file) => body.append("photos", file));
 
     try {
       const res = await fetch("/api/quote", { method: "POST", body });
-      const data = (await res.json()) as { ok: boolean; message?: string };
-      if (!res.ok || !data.ok) {
-        throw new Error(data.message || "Something went wrong. Please call us.");
+      const contentType = res.headers.get("content-type") || "";
+      let data: { ok?: boolean; message?: string } = {};
+
+      if (contentType.includes("application/json")) {
+        data = (await res.json()) as { ok?: boolean; message?: string };
+      } else {
+        await res.text();
       }
+
+      if (!res.ok || !data.ok) {
+        throw new Error(
+          data.message || "We could not send your request. Please call or text us instead.",
+        );
+      }
+
       setStatus("success");
       setForm(starting);
-      setFiles([]);
     } catch (err) {
       setStatus("error");
-      setServerMessage(err instanceof Error ? err.message : "Please try again or call us.");
+      setServerMessage(
+        err instanceof Error
+          ? err.message
+          : "We could not send your request. Please call or text us instead.",
+      );
     }
   }
 
@@ -120,12 +122,21 @@ export function QuoteForm({ defaultService, className }: Props) {
       >
         <p className="font-display text-2xl text-[var(--color-ink)]">Thanks — we got it.</p>
         <p className="mt-3 text-[var(--color-muted)]">
-          Your request was sent to All Goode Property Services. We&apos;ll review the details and
-          get back to you.
+          Your quote request was delivered to All Goode Property Services. We&apos;ll review the
+          details and get back to you.
         </p>
+        <a
+          href={smsHref(
+            business.phoneSms,
+            "Hi All Goode — I just sent a quote request from the website. Here are the job photos.",
+          )}
+          className="mt-4 inline-flex min-h-11 items-center font-semibold text-[var(--color-green)] underline underline-offset-4"
+        >
+          Text job photos
+        </a>
         <Button
           type="button"
-          className="mt-6"
+          className="mt-6 block"
           variant="secondary"
           onClick={() => setStatus("idle")}
         >
@@ -166,6 +177,7 @@ export function QuoteForm({ defaultService, className }: Props) {
             onChange={(e) => update("name", e.target.value)}
             className={inputClass}
             autoComplete="name"
+            aria-invalid={Boolean(errors.name)}
           />
         </Field>
         <Field label="Phone" error={errors.phone}>
@@ -177,6 +189,7 @@ export function QuoteForm({ defaultService, className }: Props) {
             className={inputClass}
             autoComplete="tel"
             inputMode="tel"
+            aria-invalid={Boolean(errors.phone)}
           />
         </Field>
         <Field label="Email" error={errors.email} hint="Optional">
@@ -186,6 +199,7 @@ export function QuoteForm({ defaultService, className }: Props) {
             onChange={(e) => update("email", e.target.value)}
             className={inputClass}
             autoComplete="email"
+            aria-invalid={Boolean(errors.email)}
           />
         </Field>
         <Field label="Service Needed" error={errors.service}>
@@ -193,6 +207,7 @@ export function QuoteForm({ defaultService, className }: Props) {
             value={form.service}
             onChange={(e) => update("service", e.target.value)}
             className={inputClass}
+            aria-invalid={Boolean(errors.service)}
           >
             {quoteServiceOptions.map((option) => (
               <option key={option} value={option}>
@@ -222,27 +237,26 @@ export function QuoteForm({ defaultService, className }: Props) {
             onChange={(e) => update("details", e.target.value)}
             className={cn(inputClass, "resize-y")}
             placeholder="What needs to be removed, cleaned up, or handled?"
+            aria-invalid={Boolean(errors.details)}
           />
         </Field>
-        <Field
-          label="Photo Upload"
-          error={errors.files}
-          hint="Multiple images welcome"
-          className="sm:col-span-2"
-        >
-          <input
-            type="file"
-            accept="image/*"
-            multiple
-            onChange={(e) => setFiles(Array.from(e.target.files || []))}
-            className="block w-full text-sm text-[var(--color-muted)] file:mr-3 file:rounded-md file:border-0 file:bg-[var(--color-ink)] file:px-4 file:py-2 file:text-sm file:font-semibold file:text-[var(--color-cream)]"
-          />
-          {files.length > 0 ? (
-            <p className="mt-2 text-xs text-[var(--color-muted)]">
-              {files.length} photo{files.length === 1 ? "" : "s"} selected
-            </p>
-          ) : null}
-        </Field>
+
+        <div className="sm:col-span-2 rounded-lg border border-black/10 bg-[var(--color-cream)] p-4">
+          <p className="text-sm font-semibold text-[var(--color-ink)]">Have job photos?</p>
+          <p className="mt-1 text-sm leading-relaxed text-[var(--color-muted)]">
+            Keep the web form fast and reliable — send photos by text after you submit.
+          </p>
+          <a
+            href={smsHref(
+              business.phoneSms,
+              "Hi All Goode — I'd like a quote. Here are the job photos.",
+            )}
+            className="mt-2 inline-flex min-h-11 items-center font-semibold text-[var(--color-green)] underline underline-offset-4"
+          >
+            Text photos to {business.phoneDisplay}
+          </a>
+        </div>
+
         <Field label="Desired Timeframe" className="sm:col-span-2">
           <div className="grid gap-2 sm:grid-cols-2">
             {timeframeOptions.map((option) => (
@@ -279,6 +293,10 @@ export function QuoteForm({ defaultService, className }: Props) {
       <Button type="submit" className="mt-6 w-full sm:w-auto" disabled={status === "submitting"}>
         {status === "submitting" ? "Sending…" : "Get My Free Quote"}
       </Button>
+
+      <p className="mt-4 max-w-xl text-xs leading-relaxed text-[var(--color-muted)]">
+        We use the information you submit only to review and respond to your quote request.
+      </p>
     </form>
   );
 }
