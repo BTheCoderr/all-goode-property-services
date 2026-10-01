@@ -27,13 +27,14 @@ export function BeforeAfterSlider({ project, className }: Props) {
     <figure className={cn("overflow-hidden rounded-xl bg-[var(--color-ink)]", className)}>
       <div
         ref={containerRef}
-        className="relative aspect-[4/3] touch-none select-none"
+        className="relative aspect-[4/3] touch-pan-y select-none"
         onPointerDown={(e) => {
+          if (e.pointerType !== "mouse") return;
           e.currentTarget.setPointerCapture(e.pointerId);
           updateFromClientX(e.clientX);
         }}
         onPointerMove={(e) => {
-          if (e.currentTarget.hasPointerCapture(e.pointerId)) {
+          if (e.pointerType === "mouse" && e.currentTarget.hasPointerCapture(e.pointerId)) {
             updateFromClientX(e.clientX);
           }
         }}
@@ -76,7 +77,7 @@ export function BeforeAfterSlider({ project, className }: Props) {
         </span>
 
         <label htmlFor={labelId} className="sr-only">
-          Drag to compare before and after for {project.title}
+          Compare before and after for {project.title}
         </label>
         <input
           id={labelId}
@@ -85,7 +86,7 @@ export function BeforeAfterSlider({ project, className }: Props) {
           max={100}
           value={position}
           onChange={(e) => setPosition(Number(e.target.value))}
-          className="absolute inset-x-4 bottom-3 z-20 w-[calc(100%-2rem)] accent-[var(--color-green)]"
+          className="absolute inset-x-4 bottom-3 z-20 h-11 w-[calc(100%-2rem)] accent-[var(--color-green)]"
         />
       </div>
 
