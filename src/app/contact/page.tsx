@@ -27,8 +27,9 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <SectionHeading
+              as="h1"
               title="Tell Us What You Need Gone, Cleaned Up or Handled."
-              subtitle="Photos help a lot. Call, text, or send the form — whichever is easiest."
+              subtitle="Call, text, or send the form — whichever is easiest. Text photos directly so they arrive reliably."
             />
             <div className="mt-8 space-y-4 rounded-xl border border-black/8 bg-white p-6">
               <div>
@@ -59,7 +60,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                   href={business.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-1 font-medium text-[var(--color-green)]"
+                  className="mt-1 inline-flex min-h-11 items-center font-medium text-[var(--color-green)]"
                 >
                   {business.instagramHandle}
                 </a>
